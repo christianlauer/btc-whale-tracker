@@ -6,7 +6,6 @@ import telegram_send
 
 btc_addresses = {
     '#3': '1P5ZEDWTKTFGxQjZphgWPQUpe554WKDfHQ',
-    'Random': '14m3sd9HCCFJW4LymahJCKMabAxTK4DAqW',
     }
 
 t_time = {}
@@ -49,7 +48,7 @@ while True:
     midnight = now.replace(hour=0, minute=0, second=0, microsecond=0)
     minutes  = ((now - midnight).seconds) // 60
 
-    if (minutes % 60) == 0:
+    if (minutes % 15) == 0:
         telegram_send.send(messages=['Whale watcher checking in.'])    
-        time.sleep(60)
+        time.sleep(15)
         check_again = True
